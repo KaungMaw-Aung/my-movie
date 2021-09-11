@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_movie_poster"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:elevation="6dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dummy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,281:422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyMovie.Poster" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        app:cardCornerRadius="16dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_movie_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_movie_poster">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintBottom_toTopOf="@+id/tv_movie_overview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Kate" />
+
+            <TextView
+                android:id="@+id/tv_movie_overview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:ellipsize="end"
+                android:maxLines="6"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintBottom_toTopOf="@+id/tv_released_date_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tv_movie_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_title"
+                tools:text="After she's irreversibly poisoned, a ruthless criminal operative has less than 24 hours to exact revenge on her enemies and in the process forms an unexpected bond with the daughter of one of her past victims." />
+
+            <TextView
+                android:id="@+id/tv_released_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/released_date"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintBottom_toTopOf="@+id/iv_popularity_icon"
+                app:layout_constraintStart_toStartOf="@+id/tv_movie_overview"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_overview" />
+
+            <TextView
+                android:id="@+id/tv_released_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_released_date_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_released_date_label"
+                tools:text="2021-09-01" />
+
+            <ImageView
+                android:id="@+id/iv_popularity_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_popularity_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_released_date_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_released_date_label"
+                app:srcCompat="@drawable/ic_trending" />
+
+            <TextView
+                android:id="@+id/tv_popularity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/popularity"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_popularity_icon"
+                app:layout_constraintEnd_toEndOf="@+id/tv_released_date_label"
+                app:layout_constraintTop_toTopOf="@+id/iv_popularity_icon" />
+
+            <TextView
+                android:id="@+id/tv_popularity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceCaption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_popularity_label"
+                app:layout_constraintTop_toTopOf="@+id/tv_popularity_label"
+                tools:text="111.04" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

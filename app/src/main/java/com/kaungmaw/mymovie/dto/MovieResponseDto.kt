@@ -1,8 +1,8 @@
 package com.kaungmaw.mymovie.dto
 
 data class MovieResponseDto(
-    val page: Long?,
+    val page: Int?,
     val results: List<MovieDto>?,
-    val totalPages: Long?,
-    val totalResults: Long?
+    val totalPages: Int?,
+    val totalResults: Int?
 )

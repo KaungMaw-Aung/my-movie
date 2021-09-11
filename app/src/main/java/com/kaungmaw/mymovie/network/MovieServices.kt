@@ -3,6 +3,7 @@ package com.kaungmaw.mymovie.network
 import com.kaungmaw.mymovie.dto.MovieDto
 import com.kaungmaw.mymovie.dto.MovieResponseDto
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -13,7 +14,7 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.themoviedb.org/3/"
 
-val moshi: Moshi = Moshi.Builder().build()
+val moshi: Moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
 
 val httpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
 
@@ -37,7 +38,7 @@ interface MovieServices {
 }
 
 object MovieService {
-    val movieServices by lazy {
+    val movieServices: MovieServices by lazy {
         retrofit.create(MovieServices::class.java)
     }
 }

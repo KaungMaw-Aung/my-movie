@@ -29,6 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -51,7 +54,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
     // Moshi
-    implementation("com.squareup.moshi:moshi:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
 
     // moshi converter
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
@@ -60,4 +63,18 @@ dependencies {
     debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
     releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    // Paging
+    implementation "androidx.paging:paging-runtime-ktx:3.0.1"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
 }
