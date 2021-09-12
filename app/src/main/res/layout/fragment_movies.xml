@@ -14,4 +14,15 @@
         android:orientation="vertical"
         tools:listitem="@layout/item_recycler_movie"/>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_load_state"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:visibility="invisible"
+        app:lottie_rawRes="@raw/movie_loading"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="true"
+        app:lottie_speed="1" />
+
 </FrameLayout>

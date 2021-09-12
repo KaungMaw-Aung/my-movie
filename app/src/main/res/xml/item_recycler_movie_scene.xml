@@ -36,6 +36,7 @@
             android:layout_marginStart="50dp"
             motion:layout_constraintTop_toTopOf="@+id/iv_movie_poster"
             motion:layout_constraintStart_toStartOf="parent"
-            android:alpha="0" />
+            android:alpha="0"
+            android:visibility="invisible" />
     </ConstraintSet>
 </MotionScene>
