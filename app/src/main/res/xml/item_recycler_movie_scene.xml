@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="1000">
-       <KeyFrameSet>
-       </KeyFrameSet>
-        <OnClick motion:targetId="@id/iv_movie_poster"
-            motion:clickAction="toggle" />
+        motion:duration="500">
+        <KeyFrameSet></KeyFrameSet>
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/iv_movie_poster" />
     </Transition>
 
-    <ConstraintSet android:id="@+id/start">
-    </ConstraintSet>
+    <ConstraintSet android:id="@+id/start"></ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            motion:layout_constraintDimensionRatio="h,281:422"
-            android:layout_height="0dp"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/iv_movie_poster"
             android:layout_width="245dp"
-            android:id="@+id/iv_movie_poster" />
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="h,281:422"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
         <Constraint
             android:id="@+id/materialCardView"
-            android:elevation="6dp"
-            motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="@+id/iv_movie_poster"
             android:layout_marginStart="50dp"
-            motion:layout_constraintTop_toTopOf="@+id/iv_movie_poster"
-            motion:layout_constraintStart_toStartOf="parent"
             android:alpha="0"
-            android:visibility="invisible" />
+            android:elevation="6dp"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="@+id/iv_movie_poster"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/iv_movie_poster" />
     </ConstraintSet>
 </MotionScene>
